@@ -1,0 +1,50 @@
+version: "3.9"
+
+networks:
+  streamstation:
+     name: streamstation
+     driver: bridge
+     ipam:
+      config:
+       - subnet: 172.18.0.0/24
+
+services:
+  telerix:
+    image: fill205/telerix:latest
+    container_name: telerix
+    networks:
+     streamstation:
+      ipv4_address: "172.18.0.2"
+    hostname: telerix
+    ports:
+      - "9000:80"
+    restart: always
+    volumes:
+      - telerix:/Telerix-master
+      - asterisk:/etc/asterisk
+      - telerix_ssh:/etc/ssh
+
+  icecast:
+    image: fill205/icecast_liquidsoap:latest
+    container_name: icecast
+    networks:
+     streamstation:
+      ipv4_address: "172.18.0.4"
+    hostname: icecast
+    ports:
+      - "8000:8000"
+    restart: always
+    volumes:
+      - icecast:/etc/icecast2/
+      - liquidsoap_content:/home/radio/webradio/content
+      - liquidsoap_data:/home/radio/webradio
+      - icecast_ssh:/etc/ssh
+
+volumes:
+      telerix: {}
+      asterisk: {}
+      telerix_ssh: {}
+      icecast: {}
+      liquidsoap_content: {}
+      liquidsoap_data: {}
+      icecast_ssh: {}

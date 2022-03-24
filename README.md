@@ -50,7 +50,7 @@ Für die Anmeldung in Icecast: <br>
 
 1. Über die Kommandozeile in den Container wechseln:
 ```bash
-docker exec -it icecast /bin/bash
+docker exec -it icecast bash
 ```
 2. Konfigurationsdatei öffnen
 ```bash

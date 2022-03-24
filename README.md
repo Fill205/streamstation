@@ -41,8 +41,7 @@ Icecast: Http://localhost:8000 <br></p>
 <p>
 Für die Anmeldung in Icecast: <br>
   User: admin
-  Passwort: set here your password <br>
-  (Ja, das ist wirklich das Passwort :) inkl. Leerzeichen zwischen den Wörtern) <br>
+  Passwort: admin123 <br>
   Für Telerix könnt ihr nun selbst die Daten wählen...
 </p>
 

@@ -17,7 +17,7 @@ services:
       ipv4_address: "172.18.0.2"
     hostname: telerix
     ports:
-      - "9000:80"
+      - "9000:80/tcp"
     restart: always
     volumes:
       - telerix:/Telerix-master

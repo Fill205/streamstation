@@ -1,9 +1,9 @@
 <h1>Streamstation</h1>
 
-In diesen Docker Services handelt es sich um eine Streamingstation, die es ermöglicht, einen Audiostream an Icecast2 zu senden. 
-Dieser Stream kann dann dann z.B. auf einer Website eingebunden werden oder aber, über eine Sipgate Telefonanlage mitgehört werden. 
+In diesen Docker-Services handelt es sich um eine Streamingstation, die es ermöglicht, einen Audiostream an Icecast2 zu senden. 
+Dieser Stream kann dann z.B. auf einer Website eingebunden oder über eine Sipgate Telefonanlage mitgehört werden. 
 
-Telerix wurde von Benjamin Hedert entwickelt und ist als standalone Applikation für die native Installation auf z.B. Ubuntu hier auf GitHub erhältlich:
+Telerix wurde von Benjamin Hedert entwickelt und ist als standalone Applikation für die native Installation auf Ubuntu hier auf GitHub erhältlich:
 [Telerix](https://github.com/beni1993/Telerix)
 
 <h2>Vorraussetzungen für die Installation</h2>
@@ -12,7 +12,7 @@ Docker für Windows, MacOS oder Linux, Git
 
 <h2>Installationsanleitung</h2>
 
-1. Nach der Installation und Start von Docker muss dieses Repository herunter geladen werden. Dafür verwenden wir git.
+1. Nach der Installation und Start von Docker muss dieses Repository herunter geladen werden. Dafür verwenden wir Git.
 2. Wechseln in ein beliebiges Verzeichnis: 
 ```bash
 cd /
@@ -31,7 +31,7 @@ docker-compose up -d
 ```
 <h2></h2>
 <p>Docker hat nun Telerix und Icecast als Container installiert.<br>
-Telerix ist eine Frontend für die Asterisk Telefonanlage und Icecast, wie bereits erwähnt, die Streamingplattform.<br>
+Telerix ist eine Frontend für den Verbund der Asterisk Telefonanlage und Icecast.<br>
 <br>
 Über den lokalen Browser kannst du nun auf die beiden Applikationen zugreifen:<br>
 Telerix: http://localhost:9000 <br>
@@ -57,15 +57,15 @@ docker exec -it icecast bash
 ```bash
 vim /etc/icecast2/icecast.xml
 ```
-3. Zum Bereich der Passwörter und User springen: 
+3. Zum Bereich der Passwörter und User gehen: 
 ```bash
 :37
 ```
-4. In den Editirmodus wechseln:
+4. In den Editiermodus wechseln:
 ```bash
 i
 ```
-5. Die zwischen den beiden Tags > und < das bekannte Passwort ändern, auch in den nächsten Zeilen. In Summe drei mal. 
+5. Zwischen den beiden Tags > und < das bekannte Passwort ändern. Auch in den nächsten Zeilen. In Summe drei mal. 
 6. Editiermodus verlassen mit Escape Taste
 7. Datei speichern und schließen:
 ```bash
@@ -75,7 +75,7 @@ i
 ```bash
 service icecast2 restart
 ```
-9. Falls denkbar wäre auch den Container neu zu starten. Dazu auf dem Hostsystem das Kommandozeilenprogramm öffnen und folgenden Befehl absetzen:
+9. Auch wenn der Container neu gestartet wird, wird der Dienst neu gestartet. Dazu auf dem Hostsystem das Kommandozeilenprogramm öffnen und folgenden Befehl absetzen:
 ```bash
 docker restart icecast
 ```
@@ -83,7 +83,7 @@ docker restart icecast
 
 <h2>Stream einrichten</h2>
 <p>
-Dazu einen verwendest du auf dem Computer, von dem aus gestreamt werden soll z.B. das Programm Butt welches es zum Download gibt. <br>
+Dazu verwendest du auf dem Computer, von dem aus gestreamt werden soll z.B. das Programm Butt das zum kostenlosen Download angeboten wird. <br>
 https://danielnoethen.de/butt/ <br>
 <br>
 Richte in Butt den Stream ein und beginne den Stream an den Icecast zu senden. <br>
@@ -91,6 +91,3 @@ Richte in Butt den Stream ein und beginne den Stream an den Icecast zu senden. <
 Telerix einrichten: <br>
 Hierfür gibst du die Streamurl an z.b. icecast:8000/stream.mp3 <br>
 Wenn du auf Sipgate einen Account hast, hinterlege die Zugangsdaten in Telerix
-  
-
-
